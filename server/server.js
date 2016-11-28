@@ -25,7 +25,7 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-app.use('/', express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../public')));
 app.use('/api', rootRouter);
 app.get('/home', function (req, res) {
   res.sendFile(path.join(__dirname, '../public/index.html'))
