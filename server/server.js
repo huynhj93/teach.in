@@ -27,8 +27,9 @@ app.use(session({
 
 app.use('/', express.static(path.join(__dirname, '../public')));
 app.use('/api', rootRouter);
-app.get('*', function (req, res) {
+app.get('/home', function (req, res) {
   res.sendFile(path.join(__dirname, '../public/index.html'))
-})
+});
+
 //app.get('/api', function(req,res){res.send('i made it')});
 app.listen(process.env.PORT || PORT, () => console.log('Server running on port', PORT));
