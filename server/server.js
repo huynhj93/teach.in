@@ -27,6 +27,9 @@ app.use(session({
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/api', rootRouter);
+app.get('/bundle.js', function (req, res) {
+  res.sendFile(path.join(__dirname, '../public/index.html'))
+});
 app.get('/home', function (req, res) {
   res.sendFile(path.join(__dirname, '../public/index.html'))
 });
